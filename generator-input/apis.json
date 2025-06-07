@@ -238,7 +238,7 @@
     },
     {
       "id": "Google.Area120.Tables.V1Alpha1",
-      "version": "2.0.0-alpha16",
+      "version": "2.0.0-alpha17",
       "type": "grpc",
       "productName": "Google Area 120 Tables",
       "description": "Recommended Google client library to access the Area 120 Tables API",
@@ -2179,7 +2179,7 @@
       "type": "other",
       "metadataType": "INTEGRATION",
       "targetFrameworks": "netcoreapp3.1",
-      "testTargetFrameworks": "net6.0",
+      "testTargetFrameworks": "net8.0",
       "description": "Google Cloud Logging, Trace and Error Reporting Instrumentation Libraries for ASP.NET Core 3.",
       "tags": [
         "Error",
@@ -2728,6 +2728,7 @@
       "shortName": "firestore",
       "serviceConfigFile": "firestore_v1.yaml",
       "restNumericEnums": true,
+      "transport": "grpc+rest",
       "includeCommonResourcesProto": true,
       "projects": [
         "Tests"
@@ -3323,7 +3324,7 @@
       "type": "other",
       "metadataType": "INTEGRATION",
       "targetFrameworks": "netstandard2.0",
-      "testTargetFrameworks": "net6.0",
+      "testTargetFrameworks": "net8.0",
       "description": "ConsoleFormatter for Google Cloud Logging.",
       "tags": [
         "Logging",
@@ -6638,7 +6639,9 @@
         "shopping",
         "issues"
       ],
-      "dependencies": {},
+      "dependencies": {
+        "Google.Shopping.Type": "1.0.0-beta06"
+      },
       "generator": "micro",
       "protoPath": "google/shopping/merchant/issueresolution/v1beta",
       "includeCommonResourcesProto": true,
