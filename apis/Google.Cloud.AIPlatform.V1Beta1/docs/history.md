@@ -1,5 +1,43 @@
 # Version history
 
+## Version 1.0.0-beta35, released 2025-06-17
+
+### New features
+
+- Add DnsPeeringConfig in service_networking.proto
+- Add dns_peering_configs to PscInterfaceConfig
+- Add Scaled tier for RagEngineConfig to v1beta, equivalent to Enterprise
+- Add Unprovisioned tier to RagEngineConfig in v1beta1 that can disable RagEngine service and delete all data within the service
+
+### Documentation improvements
+
+- Enterprise tier in RagEngineConfig, use Scaled tier instead.
+
+## Version 1.0.0-beta34, released 2025-06-13
+
+### New features
+
+- Introduce RagFileMetadataConfig for importing metadata to Rag
+
+## Version 1.0.0-beta33, released 2025-06-09
+
+### New features
+
+- Expose UrlContextMetadata API to v1beta1
+- Add json schema support to structured output and function declaration
+- A new field `include_thoughts` is added to message `.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig`
+- A new field `thought_signature` is added to message `.google.cloud.aiplatform.v1.Part`
+- A new field `thought` is added to message `.google.cloud.aiplatform.v1.Part`
+- Expose URL Context API to v1beta1
+
+### Bug fixes
+
+- Upgrade gRPC service registration func
+
+### Documentation improvements
+
+- Allow field `thought` to be set as input
+
 ## Version 1.0.0-beta32, released 2025-05-28
 
 ### New features
