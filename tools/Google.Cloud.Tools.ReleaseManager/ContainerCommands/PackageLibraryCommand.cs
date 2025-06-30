@@ -58,9 +58,8 @@ internal class PackageLibraryCommand : IContainerCommand
                 "-o", outputDirectory,
                 $"apis/{api.Id}/{api.Id}");
 
-            // Run with a working directory of the repo root so we have access to generate-sbom,
-            // but pass the full filename in.
-            Processes.RunDotnet(repoRoot, "generate-sbom", Path.Combine(outputDirectory, $"{api.Id}.{api.Version}.nupkg"));
+            // Run from the container directory to use the tool configuration from there.
+            Processes.RunDotnet("/app", "generate-sbom", Path.Combine(outputDirectory, $"{api.Id}.{api.Version}.nupkg"));
         }
         Console.WriteLine("Building documentation");
         Processes.RunBashScript(Path.Combine(repoRoot, "docs"), "builddocs.sh", apis.Select(api => api.Id));
@@ -79,6 +78,10 @@ internal class PackageLibraryCommand : IContainerCommand
     private static void PackageDocumentation(RootLayout rootLayout, ApiMetadata api, string outputDirectory)
     {
         var docsDir = rootLayout.CreateDocsLayout(api.Id).OutputDirectory;
+        if (!Directory.Exists(docsDir))
+        {
+            return;
+        }
         // Note: a comment in uploaddocs.sh claims we don't generate documentation for all packages.
         // I believe this is no longer true.
         var siteDir = Path.Combine(docsDir, "site");

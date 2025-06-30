@@ -1,5 +1,26 @@
 # Version history
 
+## Version 3.26.0, released 2025-06-17
+
+### Bug fixes
+
+- Change HandleAck retry behavior to check metadata before the exception code
+
+## Version 3.25.0, released 2025-06-16
+
+### New features
+
+- Add SchemaViolationReason to IngestionFailureEvent
+- Generate renamed go pubsub admin clients
+
+### Bug fixes
+
+- Forget ordering keys that have no pending messages.
+
+### Documentation improvements
+
+- Standardize spelling of "acknowledgment" in Pub/Sub protos
+
 ## Version 3.24.0, released 2025-03-31
 
 ### Documentation improvements
