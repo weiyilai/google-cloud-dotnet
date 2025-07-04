@@ -1,5 +1,48 @@
 # Version history
 
+## Version 3.36.0, released 2025-06-25
+
+### New features
+
+- Add PSCAutomationConfig to PrivateServiceConnectConfig in service_networking.proto
+- Add GenAiAdvancedFeaturesConfig to endpoint.proto
+- Add Model Garden deploy OSS model API
+
+### Documentation improvements
+
+- Update dedicateEndpointDns documentation
+
+## Version 3.35.0, released 2025-06-17
+
+### New features
+
+- Add DnsPeeringConfig in service_networking.proto
+- Add dns_peering_configs to PscInterfaceConfig
+- Add RagEngineConfig update/get APIs to v1
+- Add Unprovisioned tier to RagEngineConfig to disable RagEngine service and delete all data within the service.
+
+## Version 3.34.0, released 2025-06-13
+
+### New features
+
+- Add EncryptionSpec field for RagCorpus CMEK feature to v1
+
+## Version 3.33.0, released 2025-06-09
+
+### New features
+
+- Expose UrlContextMetadata API to v1
+- Add network_attachment to PscInterfaceConfig
+- Add psc_interface_config to CustomJobSpec
+- Add psc_interface_config to PersistentResource
+- Add psc_interface_config to PipelineJob
+- Add json schema support to structured output and function declaration
+- Expose URL Context API to v1
+
+### Bug fixes
+
+- Upgrade gRPC service registration func
+
 ## Version 3.32.0, released 2025-05-29
 
 ### New features

@@ -22,6 +22,8 @@ namespace Google.Cloud.Tools.ReleaseManager.ContainerCommands;
 
 public class ContainerOptions
 {
+    internal const string DefaultDotnetPath = "/usr/bin/dotnet";
+
     internal const string UtilityDocsLibraryPrefix = "docs-";
     internal const string ApiPathOption = "api-path";
     internal const string LibraryIdOption = "library-id";
@@ -34,6 +36,9 @@ public class ContainerOptions
     internal const string OutputOption = "output";
     internal const string VersionOption = "version";
     internal const string ReleaseNotesOption = "release-notes";
+    // Used in tests, to be able to pass either a dotnet mock or a differnt path
+    // to dotnet than what librarian is passing.
+    internal const string DotnetPathOption = "dotnet-path";
 
     internal string ApiPath { get; set; }
     internal string LibraryId { get; set; }
@@ -46,6 +51,7 @@ public class ContainerOptions
     internal string Version { get; set; }
     internal string Output { get; set; }
     internal string ReleaseNotes { get; set; }
+    internal string DotnetPath { get; set; }
 
     internal ContainerOptions(Dictionary<string, string> options)
     {
@@ -60,7 +66,10 @@ public class ContainerOptions
         Version = options.GetValueOrDefault(VersionOption);
         Output = options.GetValueOrDefault(OutputOption);
         ReleaseNotes = options.GetValueOrDefault(ReleaseNotesOption);
+        DotnetPath = options.GetValueOrDefault(DotnetPathOption) ?? DefaultDotnetPath;
     }
+
+    internal static ContainerOptions FromArgs(params string[] args) => FromArgs((IEnumerable<string>) args);
 
     internal static ContainerOptions FromArgs(IEnumerable<string> args)
     {
@@ -84,7 +93,7 @@ public class ContainerOptions
     internal string RequireOption(string option, [CallerArgumentExpression("option")] string expression = null) =>
         option ?? throw new UserErrorException($"Option for {expression} is required");
 
-    internal List<ApiMetadata> GetApisFromLibraryId(ApiCatalog catalog) => LibraryId is null ? catalog.Apis
+    internal List<ApiMetadata> GetApisFromLibraryId(ApiCatalog catalog) => string.IsNullOrEmpty(LibraryId) ? catalog.Apis
         : catalog.PackageGroups.FirstOrDefault(pg => pg.Id == LibraryId) is PackageGroup group ? group.PackageIds.Select(id => catalog[id]).ToList()
         : new() { catalog[LibraryId] };
 }

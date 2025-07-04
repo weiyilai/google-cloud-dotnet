@@ -1270,6 +1270,12 @@
         "grpc": {
           "libraryClient": "ModelGardenServiceClient",
           "rpcs": {
+            "Deploy": {
+              "methods": [
+                "Deploy",
+                "DeployAsync"
+              ]
+            },
             "GetPublisherModel": {
               "methods": [
                 "GetPublisherModel",
@@ -2089,6 +2095,12 @@
                 "GetRagCorpusAsync"
               ]
             },
+            "GetRagEngineConfig": {
+              "methods": [
+                "GetRagEngineConfig",
+                "GetRagEngineConfigAsync"
+              ]
+            },
             "GetRagFile": {
               "methods": [
                 "GetRagFile",
@@ -2117,6 +2129,12 @@
               "methods": [
                 "UpdateRagCorpus",
                 "UpdateRagCorpusAsync"
+              ]
+            },
+            "UpdateRagEngineConfig": {
+              "methods": [
+                "UpdateRagEngineConfig",
+                "UpdateRagEngineConfigAsync"
               ]
             },
             "UploadRagFile": {
