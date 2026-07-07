@@ -5656,7 +5656,7 @@
         "Spanner"
       ],
       "dependencies": {
-        "Google.Api.Gax.Grpc": "default",
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Iam.V1": "3.5.0",
         "Google.Cloud.Spanner.Common.V1": "project",
         "Google.LongRunning": "3.5.0"
@@ -5685,7 +5685,7 @@
         "Spanner"
       ],
       "dependencies": {
-        "Google.Api.Gax.Grpc": "default",
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Iam.V1": "3.5.0",
         "Google.Cloud.Spanner.Common.V1": "project",
         "Google.LongRunning": "3.5.0"
@@ -5713,7 +5713,7 @@
         "ADO"
       ],
       "dependencies": {
-        "Google.Api.Gax.Grpc": "default",
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Spanner.Admin.Database.V1": "project",
         "Google.Cloud.Spanner.Admin.Instance.V1": "project",
         "Google.Cloud.Spanner.V1": "project",
@@ -5721,8 +5721,8 @@
         "Microsoft.Extensions.Configuration.Abstractions": "default"
       },
       "testDependencies": {
-        "Google.Api.Gax.Grpc.Testing": "default",
-        "Google.Api.Gax.Testing": "default",
+        "Google.Api.Gax.Grpc.Testing": "4.14.0",
+        "Google.Api.Gax.Testing": "4.14.0",
         "Microsoft.Extensions.Configuration": "default",
         "Microsoft.Extensions.DependencyInjection": "default",
         "System.ValueTuple": "default",
@@ -5747,7 +5747,7 @@
         "Spanner"
       ],
       "dependencies": {
-        "Google.Api.Gax": "default"
+        "Google.Api.Gax": "4.14.0"
       },
       "noVersionHistory": true
     },
@@ -5766,6 +5766,7 @@
         "Spanner"
       ],
       "dependencies": {
+        "Google.Api.Gax.Grpc": "4.14.0",
         "Google.Cloud.Spanner.Common.V1": "project"
       },
       "testDependencies": {
